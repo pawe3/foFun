@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    {{ dump(date) }}
+    <p>Kategoria</p>
+
+        <table border="1" style="width:100%">
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Akcja</th>
+            </tr>
+            {% for v in date %}
+                <tr style="text-align: center">
+                    <td>{{ v.id }}</td>
+                    <td>{{ v.nazwaKat }}</td>
+                    {#<td>{{ v.isActive }}</td>#}
+                    <td>
+                        <a href="{{ path('update_kategoria', {id:v.id}) }}"><button type="button">Update</button></a>
+                        <a href="{{ path('delete_kategoria', {id:v.id}) }}"> <button type="button">Delete</button></a>
+                    </td>
+                </tr>
+
+                id: {{ v.id }}
+            {% endfor %}
+        </table>
+
+        <a href="{{ path('add_kategoria') }}"><button type="button">Add</button></a>
+
+
+{% endblock %}

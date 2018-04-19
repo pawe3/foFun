@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+        {#{{ dump(date) }}#}
+
+        {#<table style="width:100%">#}
+            {#<tr>#}
+                {#<th>ID</th>#}
+                {#<th>Nazwa</th>#}
+                {#<th>Cena</th>#}
+                {#<th>Category</th>#}
+                {#<th>Aktywny</th>#}
+                {#<th>Akcja</th>#}
+            {#</tr>#}
+            {#{% for v in date %}#}
+                {#<tr style="text-align: center">#}
+                    {#<td>{{ v.id }}</td>#}
+                    {#<td>{{ v.nazwa }}</td>#}
+                    {#<td>{{ v.cena }}</td>#}
+                    {#<td><ul>{% for v1 in v.kategoria %}#}
+                                {#<li>#}
+                                    {#{{ v1.nazwaKat is defined ? v1.nazwaKat : '' }}#}
+                                {#</li>#}
+                            {#{% endfor %}</ul>#}
+                    {#</td>#}
+                    {#<td>{{ v.isActive }}</td>#}
+                    {#<td><a href="{{ path('update_towary', {id:v.id}) }}"> <button type="button">Update</button></a>#}
+                        {#<a href="{{ path('delete_towary', {id:v.id}) }}"><button type="button">Delete</button></a></td>#}
+                {#</tr>#}
+
+
+
+
+                {#id: {{ v.id }}#}
+
+            {#{% endfor %}#}
+        {#</table>#}
+
+        {#<a href="{{ path('add_towary') }}"><button type="button">Add</button></a>#}
+{#{% include ':default:index.html.twig' %}#}
+
+{% endblock %}
